@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './carousel.css'; // assuming the styling is in a separate CSS file
-import { Box } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 
 function Carousel() {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -19,8 +19,8 @@ function Carousel() {
   ];
 
   return (
-    <Box >
-      <Box className="container" w={"100vw"} border={"2px solid teal"} >
+    <  >
+      <Box className="container" w={"100%"} border={"1px solid red"}  >
         <Box className="carousel" >
           {slides.map(slide => (
             <input
@@ -41,16 +41,16 @@ function Carousel() {
                 }`}
                 key={slide.id}
               >
-                <Box border={"2px solid red"}  display={"flex"} >
-                  <div >
-                    <img src={slide.src} alt={slide.alt}  />
-                  </div>
-                  <div>
+                <Flex gap={18} >
+                  <Box flex={3}  >
+                    <img src={slide.src} alt={slide.alt} width={"100%"} />
+                  </Box>
+                  <Box flex={2} padding={12}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.lorem1800
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam doloremque corrupti iure voluptate, magni ratione possimus reprehenderit quae officiis quam? Saepe commodi eos magnam adipisci modi ipsa optio dicta corrupti dolorum sunt. Consectetur nemo illo quaerat odio vel voluptatum impedit totam tempora exercitationem ratione quae distinctio quis, libero at, voluptas unde nisi! Animi, voluptatem minima provident unde soluta quibusdam ad cupiditate similique enim. Deleniti, repudiandae nesciunt suscipit, voluptatum excepturi assumenda dolorem at esse dolores sunt eligendi dolor quia quos reiciendis modi architecto veritatis? Adipisci expedita, culpa ex odio ipsum delectus debitis reprehenderit corrupti, nemo dignissimos perferendis praesentium cupiditate nam enim? Praesentium iusto recusandae officiis aperiam, distinctio quos laborum necessitatibus quo deserunt itaque magnam? Voluptates perspiciatis eveniet adipisci sit aliquam, voluptate quae nam sequi natus culpa assumenda laborum, et sunt. Dolorum distinctio repellendus ab esse. Modi fuga, veritatis impedit laborum eligendi non dolores quam reprehenderit eius totam. Eius sequi est odit nemo aspernatur tempore, itaque ratione quisquam voluptas laborum unde eaque consequatur eos dolorem fugiat dolor ipsa, accusamus cum nam maiores. Libero.
                     <span className="credit">Photo: John Doe</span>
-                  </div>
-                </Box>
+                  </Box>
+                </Flex>
               </li>
             ))}
           </ul>
@@ -65,7 +65,7 @@ function Carousel() {
           </ul>
         </Box>
       </Box>
-    </Box>
+    </>
   );
 }
 
